@@ -3,22 +3,23 @@ import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
 import Product from "./Components/Product";
+import Effect from "./Hooks/Effect";
+import Refs from "./Hooks/Refs";
+import Memo from "./Hooks/Memo";
+import Callback from "./Hooks/Callback";
 
 function App() {
   const [count, setCount] = useState(0);
 
-
   return (
     <>
       <div>
-        <h1>{count}</h1>
+        {/* <Effect /> */}
+        {/* <Refs /> */}
 
-        <button onClick={(prev) => setCount(count + 1)}>add</button>
-        <br />
+        {/* <Memo /> */}
 
-        <button onClick={(prev) => setCount(count - 2)}>Remove</button>
-
-        <Product name="Earbuds" qty="20" quality="Good" price="300rs" />
+        <Callback />
       </div>
     </>
   );
