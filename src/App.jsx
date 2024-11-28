@@ -1,4 +1,4 @@
-import { useState } from "react";
+import { createContext, useState } from "react";
 import reactLogo from "./assets/react.svg";
 import viteLogo from "/vite.svg";
 import "./App.css";
@@ -7,20 +7,34 @@ import Effect from "./Hooks/Effect";
 import Refs from "./Hooks/Refs";
 import Memo from "./Hooks/Memo";
 import Callback from "./Hooks/Callback";
+import Context from "./Hooks/Context/Context";
+
+export const ThemeContext = createContext();
 
 function App() {
-  const [count, setCount] = useState(0);
+  const [Theme, setTheme] = useState("light");
+
+  const toggleTheme = () => {
+    setTheme((current) => (current == "light" ? "dark" : "light"));
+  };
 
   return (
     <>
-      <div>
-        {/* <Effect /> */}
-        {/* <Refs /> */}
+      {/* <ThemeContext.Provider value={Theme}> */}
+        <div>
+          {/* <Effect /> */}
+          {/* <Refs /> */}
 
-        {/* <Memo /> */}
+          {/* <Memo /> */}
 
-        <Callback />
-      </div>
+          {/* <Callback /> */}
+          {/* <Context /> */}
+          {/* <button onClick={toggleTheme}>toggle</button> */}
+
+
+          
+        </div>
+      {/* </ThemeContext.Provider> */}
     </>
   );
 }

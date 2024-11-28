@@ -1,11 +1,13 @@
 import React, { useState } from "react";
+import List from "./List";
+import PatrentComponent from "./Callback/PatrentComponent";
 
 function Callback() {
   const [dark, setdark] = useState(false);
   const [number, setNumber] = useState(0);
 
   const getItem = () => {
-    return number + 1, number + 2, number + 3;
+    return [number + 1, number + 2, number + 3];
   };
 
   const theme = {
@@ -17,13 +19,18 @@ function Callback() {
 
   return (
     <div style={theme}>
-      <input
+      {/* <input
         type="number"
         name=""
         id=""
-        onChange={(e) => setNumber(e.target.value)}
+        onChange={(e) => setNumber(parseInt(e.target.value))}
       />
       <button onClick={() => setdark(!dark)}>Toggle </button>
+
+      <List  getItem={getItem}/> */}
+
+      
+      <PatrentComponent />
     </div>
   );
 }
