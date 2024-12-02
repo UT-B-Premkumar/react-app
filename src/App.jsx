@@ -8,7 +8,13 @@ import Refs from "./Hooks/Refs";
 import Memo from "./Hooks/Memo";
 import Callback from "./Hooks/Callback";
 import Context from "./Hooks/Context/Context";
-
+import Products from "./Components/Products/Products";
+import Layout from "./Layout";
+import Home from "./Home.jsx";
+import "../node_modules/bootstrap/dist/css/bootstrap.min.css";
+import "../node_modules/bootstrap/dist/js/bootstrap.bundle.min.js";
+import { BrowserRouter, Route, Routes } from "react-router";
+import Weather from "./Components/Weather/Weather.jsx";
 export const ThemeContext = createContext();
 
 function App() {
@@ -20,20 +26,28 @@ function App() {
 
   return (
     <>
+      <BrowserRouter>
+        <Routes>
+          {/* <Route path="/" element={<Home />} /> */}
+          <Route index element={<Home />} />
+          <Route path="/ecommerce" element={<Layout />} />
+          <Route path="/weather" element={<Weather />} />
+        </Routes>
+      </BrowserRouter>
+
       {/* <ThemeContext.Provider value={Theme}> */}
-        <div>
-          {/* <Effect /> */}
-          {/* <Refs /> */}
+      {/* // <div> */}
+      {/* <Effect /> */}
+      {/* <Refs /> */}
 
-          {/* <Memo /> */}
+      {/* <Memo /> */}
 
-          {/* <Callback /> */}
-          {/* <Context /> */}
-          {/* <button onClick={toggleTheme}>toggle</button> */}
+      {/* <Callback /> */}
+      {/* <Context /> */}
+      {/* <button onClick={toggleTheme}>toggle</button> */}
 
-
-          
-        </div>
+      {/* <Layout /> */}
+      {/* </div> */}
       {/* </ThemeContext.Provider> */}
     </>
   );
